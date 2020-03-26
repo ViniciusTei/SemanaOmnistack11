@@ -17,12 +17,14 @@ export default function Logon() {
 
         try {
             const response = await api.post('session', { id });
+            console.log(response);
             
+
             localStorage.setItem('ongId', id);
             localStorage.setItem('ongNome', response.data.name);
             
             history.push('/profile');
-            //parei no minuto 1:27:53
+            
         } catch (err) {
             alert('Falha no login. Tente novamente.')
         }
